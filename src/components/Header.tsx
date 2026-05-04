@@ -14,6 +14,7 @@ export function Header() {
         </Link>
         <nav className="hidden md:flex items-center gap-8 text-sm uppercase tracking-widest">
           <Link to="/" className="hover:text-muted-foreground transition">Tienda</Link>
+          <Link to="/sobre" className="hover:text-muted-foreground transition">Sobre</Link>
           <a href="https://www.instagram.com/anitas.eyes/" target="_blank" rel="noreferrer" className="hover:text-muted-foreground transition">Instagram</a>
         </nav>
         <CartDrawer />
