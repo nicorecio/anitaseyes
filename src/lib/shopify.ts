@@ -76,13 +76,32 @@ export const PRODUCTS_QUERY = `
 export const PRODUCT_BY_HANDLE_QUERY = `
   query GetProduct($handle: String!) {
     product(handle: $handle) {
-      id title description handle
+      id title description descriptionHtml handle productType vendor tags
       priceRange { minVariantPrice { amount currencyCode } }
       images(first: 10) { edges { node { url altText } } }
       variants(first: 25) {
         edges { node { id title price { amount currencyCode } availableForSale selectedOptions { name value } } }
       }
       options { name values }
+    }
+  }
+`;
+
+export const RELATED_PRODUCTS_QUERY = `
+  query GetRelated($first: Int!) {
+    products(first: $first) {
+      edges {
+        node {
+          id title handle
+          priceRange { minVariantPrice { amount currencyCode } }
+          images(first: 2) { edges { node { url altText } } }
+          variants(first: 5) {
+            edges { node { id title price { amount currencyCode } availableForSale selectedOptions { name value } } }
+          }
+          options { name values }
+          description
+        }
+      }
     }
   }
 `;
