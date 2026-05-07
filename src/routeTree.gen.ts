@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as SobreRouteImport } from './routes/sobre'
 import { Route as EnviosRouteImport } from './routes/envios'
 import { Route as DevolucionesRouteImport } from './routes/devoluciones'
+import { Route as CookiesRouteImport } from './routes/cookies'
 import { Route as CambiosRouteImport } from './routes/cambios'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ProductHandleRouteImport } from './routes/product.$handle'
@@ -29,6 +30,11 @@ const EnviosRoute = EnviosRouteImport.update({
 const DevolucionesRoute = DevolucionesRouteImport.update({
   id: '/devoluciones',
   path: '/devoluciones',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CookiesRoute = CookiesRouteImport.update({
+  id: '/cookies',
+  path: '/cookies',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CambiosRoute = CambiosRouteImport.update({
@@ -50,6 +56,7 @@ const ProductHandleRoute = ProductHandleRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/cambios': typeof CambiosRoute
+  '/cookies': typeof CookiesRoute
   '/devoluciones': typeof DevolucionesRoute
   '/envios': typeof EnviosRoute
   '/sobre': typeof SobreRoute
@@ -58,6 +65,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/cambios': typeof CambiosRoute
+  '/cookies': typeof CookiesRoute
   '/devoluciones': typeof DevolucionesRoute
   '/envios': typeof EnviosRoute
   '/sobre': typeof SobreRoute
@@ -67,6 +75,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/cambios': typeof CambiosRoute
+  '/cookies': typeof CookiesRoute
   '/devoluciones': typeof DevolucionesRoute
   '/envios': typeof EnviosRoute
   '/sobre': typeof SobreRoute
@@ -77,6 +86,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/cambios'
+    | '/cookies'
     | '/devoluciones'
     | '/envios'
     | '/sobre'
@@ -85,6 +95,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/cambios'
+    | '/cookies'
     | '/devoluciones'
     | '/envios'
     | '/sobre'
@@ -93,6 +104,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/cambios'
+    | '/cookies'
     | '/devoluciones'
     | '/envios'
     | '/sobre'
@@ -102,6 +114,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CambiosRoute: typeof CambiosRoute
+  CookiesRoute: typeof CookiesRoute
   DevolucionesRoute: typeof DevolucionesRoute
   EnviosRoute: typeof EnviosRoute
   SobreRoute: typeof SobreRoute
@@ -131,6 +144,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DevolucionesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/cookies': {
+      id: '/cookies'
+      path: '/cookies'
+      fullPath: '/cookies'
+      preLoaderRoute: typeof CookiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/cambios': {
       id: '/cambios'
       path: '/cambios'
@@ -158,6 +178,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CambiosRoute: CambiosRoute,
+  CookiesRoute: CookiesRoute,
   DevolucionesRoute: DevolucionesRoute,
   EnviosRoute: EnviosRoute,
   SobreRoute: SobreRoute,
