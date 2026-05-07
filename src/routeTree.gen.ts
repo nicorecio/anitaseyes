@@ -10,12 +10,30 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SobreRouteImport } from './routes/sobre'
+import { Route as EnviosRouteImport } from './routes/envios'
+import { Route as DevolucionesRouteImport } from './routes/devoluciones'
+import { Route as CambiosRouteImport } from './routes/cambios'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ProductHandleRouteImport } from './routes/product.$handle'
 
 const SobreRoute = SobreRouteImport.update({
   id: '/sobre',
   path: '/sobre',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EnviosRoute = EnviosRouteImport.update({
+  id: '/envios',
+  path: '/envios',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DevolucionesRoute = DevolucionesRouteImport.update({
+  id: '/devoluciones',
+  path: '/devoluciones',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CambiosRoute = CambiosRouteImport.update({
+  id: '/cambios',
+  path: '/cambios',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -31,30 +49,61 @@ const ProductHandleRoute = ProductHandleRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/cambios': typeof CambiosRoute
+  '/devoluciones': typeof DevolucionesRoute
+  '/envios': typeof EnviosRoute
   '/sobre': typeof SobreRoute
   '/product/$handle': typeof ProductHandleRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/cambios': typeof CambiosRoute
+  '/devoluciones': typeof DevolucionesRoute
+  '/envios': typeof EnviosRoute
   '/sobre': typeof SobreRoute
   '/product/$handle': typeof ProductHandleRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/cambios': typeof CambiosRoute
+  '/devoluciones': typeof DevolucionesRoute
+  '/envios': typeof EnviosRoute
   '/sobre': typeof SobreRoute
   '/product/$handle': typeof ProductHandleRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/sobre' | '/product/$handle'
+  fullPaths:
+    | '/'
+    | '/cambios'
+    | '/devoluciones'
+    | '/envios'
+    | '/sobre'
+    | '/product/$handle'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/sobre' | '/product/$handle'
-  id: '__root__' | '/' | '/sobre' | '/product/$handle'
+  to:
+    | '/'
+    | '/cambios'
+    | '/devoluciones'
+    | '/envios'
+    | '/sobre'
+    | '/product/$handle'
+  id:
+    | '__root__'
+    | '/'
+    | '/cambios'
+    | '/devoluciones'
+    | '/envios'
+    | '/sobre'
+    | '/product/$handle'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CambiosRoute: typeof CambiosRoute
+  DevolucionesRoute: typeof DevolucionesRoute
+  EnviosRoute: typeof EnviosRoute
   SobreRoute: typeof SobreRoute
   ProductHandleRoute: typeof ProductHandleRoute
 }
@@ -66,6 +115,27 @@ declare module '@tanstack/react-router' {
       path: '/sobre'
       fullPath: '/sobre'
       preLoaderRoute: typeof SobreRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/envios': {
+      id: '/envios'
+      path: '/envios'
+      fullPath: '/envios'
+      preLoaderRoute: typeof EnviosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/devoluciones': {
+      id: '/devoluciones'
+      path: '/devoluciones'
+      fullPath: '/devoluciones'
+      preLoaderRoute: typeof DevolucionesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cambios': {
+      id: '/cambios'
+      path: '/cambios'
+      fullPath: '/cambios'
+      preLoaderRoute: typeof CambiosRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -87,6 +157,9 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CambiosRoute: CambiosRoute,
+  DevolucionesRoute: DevolucionesRoute,
+  EnviosRoute: EnviosRoute,
   SobreRoute: SobreRoute,
   ProductHandleRoute: ProductHandleRoute,
 }

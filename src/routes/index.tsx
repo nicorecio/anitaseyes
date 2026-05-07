@@ -262,7 +262,7 @@ function Index() {
       {/* FOOTER */}
       <footer className="border-t border-border">
         <div className="max-w-7xl mx-auto px-6 py-14 grid md:grid-cols-4 gap-8 text-sm">
-          <div className="md:col-span-2">
+          <div>
             <p className="font-serif text-2xl mb-3">anitas.eyes</p>
             <p className="text-muted-foreground max-w-sm">
               Joyería, ropa y accesorios para mujeres con mirada propia. Hecho con cariño.
@@ -276,12 +276,23 @@ function Index() {
             </ul>
           </div>
           <div>
+            <p className="uppercase tracking-widest text-xs mb-3">Ayuda</p>
+            <ul className="space-y-2 text-muted-foreground">
+              <li><Link to="/envios" className="hover:text-accent">Envíos</Link></li>
+              <li><Link to="/cambios" className="hover:text-accent">Cambios</Link></li>
+              <li><Link to="/devoluciones" className="hover:text-accent">Devoluciones</Link></li>
+            </ul>
+          </div>
+          <div>
             <p className="uppercase tracking-widest text-xs mb-3">Contacto</p>
             <ul className="space-y-2 text-muted-foreground">
               <li>
                 <a href="https://www.instagram.com/anitas.eyes/" target="_blank" rel="noreferrer" className="hover:text-accent">
                   Instagram @anitas.eyes
                 </a>
+              </li>
+              <li>
+                <a href="mailto:hola@anitaseyes.com" className="hover:text-accent">hola@anitaseyes.com</a>
               </li>
             </ul>
           </div>
