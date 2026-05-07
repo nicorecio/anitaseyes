@@ -10,16 +10,23 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SobreRouteImport } from './routes/sobre'
+import { Route as PrivacidadRouteImport } from './routes/privacidad'
 import { Route as EnviosRouteImport } from './routes/envios'
 import { Route as DevolucionesRouteImport } from './routes/devoluciones'
 import { Route as CookiesRouteImport } from './routes/cookies'
 import { Route as CambiosRouteImport } from './routes/cambios'
+import { Route as AvisoLegalRouteImport } from './routes/aviso-legal'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ProductHandleRouteImport } from './routes/product.$handle'
 
 const SobreRoute = SobreRouteImport.update({
   id: '/sobre',
   path: '/sobre',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacidadRoute = PrivacidadRouteImport.update({
+  id: '/privacidad',
+  path: '/privacidad',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EnviosRoute = EnviosRouteImport.update({
@@ -42,6 +49,11 @@ const CambiosRoute = CambiosRouteImport.update({
   path: '/cambios',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AvisoLegalRoute = AvisoLegalRouteImport.update({
+  id: '/aviso-legal',
+  path: '/aviso-legal',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -55,29 +67,35 @@ const ProductHandleRoute = ProductHandleRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/aviso-legal': typeof AvisoLegalRoute
   '/cambios': typeof CambiosRoute
   '/cookies': typeof CookiesRoute
   '/devoluciones': typeof DevolucionesRoute
   '/envios': typeof EnviosRoute
+  '/privacidad': typeof PrivacidadRoute
   '/sobre': typeof SobreRoute
   '/product/$handle': typeof ProductHandleRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/aviso-legal': typeof AvisoLegalRoute
   '/cambios': typeof CambiosRoute
   '/cookies': typeof CookiesRoute
   '/devoluciones': typeof DevolucionesRoute
   '/envios': typeof EnviosRoute
+  '/privacidad': typeof PrivacidadRoute
   '/sobre': typeof SobreRoute
   '/product/$handle': typeof ProductHandleRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/aviso-legal': typeof AvisoLegalRoute
   '/cambios': typeof CambiosRoute
   '/cookies': typeof CookiesRoute
   '/devoluciones': typeof DevolucionesRoute
   '/envios': typeof EnviosRoute
+  '/privacidad': typeof PrivacidadRoute
   '/sobre': typeof SobreRoute
   '/product/$handle': typeof ProductHandleRoute
 }
@@ -85,38 +103,46 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/aviso-legal'
     | '/cambios'
     | '/cookies'
     | '/devoluciones'
     | '/envios'
+    | '/privacidad'
     | '/sobre'
     | '/product/$handle'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/aviso-legal'
     | '/cambios'
     | '/cookies'
     | '/devoluciones'
     | '/envios'
+    | '/privacidad'
     | '/sobre'
     | '/product/$handle'
   id:
     | '__root__'
     | '/'
+    | '/aviso-legal'
     | '/cambios'
     | '/cookies'
     | '/devoluciones'
     | '/envios'
+    | '/privacidad'
     | '/sobre'
     | '/product/$handle'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AvisoLegalRoute: typeof AvisoLegalRoute
   CambiosRoute: typeof CambiosRoute
   CookiesRoute: typeof CookiesRoute
   DevolucionesRoute: typeof DevolucionesRoute
   EnviosRoute: typeof EnviosRoute
+  PrivacidadRoute: typeof PrivacidadRoute
   SobreRoute: typeof SobreRoute
   ProductHandleRoute: typeof ProductHandleRoute
 }
@@ -128,6 +154,13 @@ declare module '@tanstack/react-router' {
       path: '/sobre'
       fullPath: '/sobre'
       preLoaderRoute: typeof SobreRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacidad': {
+      id: '/privacidad'
+      path: '/privacidad'
+      fullPath: '/privacidad'
+      preLoaderRoute: typeof PrivacidadRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/envios': {
@@ -158,6 +191,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CambiosRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/aviso-legal': {
+      id: '/aviso-legal'
+      path: '/aviso-legal'
+      fullPath: '/aviso-legal'
+      preLoaderRoute: typeof AvisoLegalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -177,10 +217,12 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AvisoLegalRoute: AvisoLegalRoute,
   CambiosRoute: CambiosRoute,
   CookiesRoute: CookiesRoute,
   DevolucionesRoute: DevolucionesRoute,
   EnviosRoute: EnviosRoute,
+  PrivacidadRoute: PrivacidadRoute,
   SobreRoute: SobreRoute,
   ProductHandleRoute: ProductHandleRoute,
 }

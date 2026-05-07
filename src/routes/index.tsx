@@ -298,9 +298,11 @@ function Index() {
           </div>
         </div>
         <div className="border-t border-border">
-          <div className="max-w-7xl mx-auto px-6 py-6 text-xs text-muted-foreground flex flex-col md:flex-row justify-between gap-2">
+          <div className="max-w-7xl mx-auto px-6 py-6 text-xs text-muted-foreground flex flex-col md:flex-row justify-between gap-3">
             <p>© {new Date().getFullYear()} Anitas Eyes. Hecho con cariño.</p>
-            <div className="flex gap-4">
+            <div className="flex flex-wrap gap-4">
+              <Link to="/aviso-legal" className="hover:text-accent">Aviso legal</Link>
+              <Link to="/privacidad" className="hover:text-accent">Privacidad</Link>
               <Link to="/cookies" className="hover:text-accent">Cookies</Link>
               <span>Envíos a toda España · Pago seguro</span>
             </div>
