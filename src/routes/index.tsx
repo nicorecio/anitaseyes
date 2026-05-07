@@ -300,7 +300,10 @@ function Index() {
         <div className="border-t border-border">
           <div className="max-w-7xl mx-auto px-6 py-6 text-xs text-muted-foreground flex flex-col md:flex-row justify-between gap-2">
             <p>© {new Date().getFullYear()} Anitas Eyes. Hecho con cariño.</p>
-            <p>Envíos a toda España · Pago seguro</p>
+            <div className="flex gap-4">
+              <Link to="/cookies" className="hover:text-accent">Cookies</Link>
+              <span>Envíos a toda España · Pago seguro</span>
+            </div>
           </div>
         </div>
       </footer>
