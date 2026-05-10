@@ -27,6 +27,8 @@ import {
   Heart,
   Truck,
   Sparkles,
+  ShieldCheck,
+  RotateCcw,
 } from "lucide-react";
 import { toast } from "sonner";
 
