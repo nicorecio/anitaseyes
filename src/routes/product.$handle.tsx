@@ -329,6 +329,15 @@ function ProductPage() {
               </Button>
             </div>
 
+            {/* Secure payment badge */}
+            <div className="flex items-center justify-center gap-3 mb-8 py-3 px-4 border border-foreground/15 bg-muted/40">
+              <ShieldCheck className="h-4 w-4 flex-shrink-0" />
+              <p className="text-xs uppercase tracking-widest font-medium">Pago seguro</p>
+              <span className="text-muted-foreground/50">·</span>
+              <RotateCcw className="h-4 w-4 flex-shrink-0" />
+              <p className="text-xs uppercase tracking-widest font-medium">Devoluciones 14 días</p>
+            </div>
+
             {/* Trust badges */}
             <div className="grid grid-cols-2 gap-3 mb-8 text-xs">
               <div className="flex items-start gap-2 p-3 border border-border">
