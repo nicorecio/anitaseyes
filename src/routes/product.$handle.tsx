@@ -27,6 +27,8 @@ import {
   Heart,
   Truck,
   Sparkles,
+  ShieldCheck,
+  RotateCcw,
 } from "lucide-react";
 import { toast } from "sonner";
 
@@ -325,6 +327,15 @@ function ProductPage() {
               >
                 <Heart className="h-4 w-4" />
               </Button>
+            </div>
+
+            {/* Secure payment badge */}
+            <div className="flex items-center justify-center gap-3 mb-8 py-3 px-4 border border-foreground/15 bg-muted/40">
+              <ShieldCheck className="h-4 w-4 flex-shrink-0" />
+              <p className="text-xs uppercase tracking-widest font-medium">Pago seguro</p>
+              <span className="text-muted-foreground/50">·</span>
+              <RotateCcw className="h-4 w-4 flex-shrink-0" />
+              <p className="text-xs uppercase tracking-widest font-medium">Devoluciones 14 días</p>
             </div>
 
             {/* Trust badges */}
