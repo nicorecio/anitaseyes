@@ -5,7 +5,7 @@ import { ProductCard } from "@/components/ProductCard";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { storefrontApiRequest, PRODUCTS_QUERY, type ShopifyProduct } from "@/lib/shopify";
-import { Loader2, Instagram, ArrowRight, Mail } from "lucide-react";
+import { Loader2, Instagram, ArrowRight, Mail, Sparkles, Truck, RotateCcw } from "lucide-react";
 import { toast } from "sonner";
 
 export const Route = createFileRoute("/")({
