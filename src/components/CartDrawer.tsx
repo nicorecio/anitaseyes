@@ -2,7 +2,9 @@ import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
-import { ShoppingBag, Minus, Plus, Trash2, ExternalLink, Loader2 } from "lucide-react";
+import { ShoppingBag, Minus, Plus, Trash2, ExternalLink, Loader2, Truck } from "lucide-react";
+
+const FREE_SHIPPING_THRESHOLD = 60;
 import { useCartStore } from "@/stores/cartStore";
 
 export function CartDrawer() {
@@ -47,6 +49,37 @@ export function CartDrawer() {
             </div>
           ) : (
             <>
+              {(() => {
+                const remaining = Math.max(0, FREE_SHIPPING_THRESHOLD - totalPrice);
+                const pct = Math.min(100, (totalPrice / FREE_SHIPPING_THRESHOLD) * 100);
+                const currency = items[0]?.price.currencyCode ?? "EUR";
+                return (
+                  <div className="mb-4 px-1">
+                    <div className="flex items-center gap-2 text-xs mb-2">
+                      <Truck className="h-3.5 w-3.5" />
+                      {remaining > 0 ? (
+                        <span>
+                          Te faltan{" "}
+                          <span className="font-semibold">
+                            {currency} {remaining.toFixed(2)}
+                          </span>{" "}
+                          para envío gratis
+                        </span>
+                      ) : (
+                        <span className="font-semibold uppercase tracking-widest">
+                          ¡Envío gratis conseguido!
+                        </span>
+                      )}
+                    </div>
+                    <div className="h-1 w-full bg-muted overflow-hidden">
+                      <div
+                        className="h-full bg-foreground transition-all duration-500"
+                        style={{ width: `${pct}%` }}
+                      />
+                    </div>
+                  </div>
+                );
+              })()}
               <div className="flex-1 overflow-y-auto pr-2 min-h-0">
                 <div className="space-y-4">
                   {items.map((item) => (
