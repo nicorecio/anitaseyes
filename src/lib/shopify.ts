@@ -29,6 +29,7 @@ export interface ShopifyProduct {
       }>;
     };
     options: Array<{ name: string; values: string[] }>;
+    tags?: string[];
   };
 }
 
@@ -60,7 +61,7 @@ export const PRODUCTS_QUERY = `
     products(first: $first) {
       edges {
         node {
-          id title description handle
+          id title description handle tags
           priceRange { minVariantPrice { amount currencyCode } }
           images(first: 5) { edges { node { url altText } } }
           variants(first: 25) {

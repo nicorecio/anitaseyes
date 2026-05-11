@@ -5,7 +5,7 @@ import { ProductCard } from "@/components/ProductCard";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { storefrontApiRequest, PRODUCTS_QUERY, type ShopifyProduct } from "@/lib/shopify";
-import { Loader2, Instagram, ArrowRight, Mail } from "lucide-react";
+import { Loader2, Instagram, ArrowRight, Mail, Sparkles, Truck, RotateCcw } from "lucide-react";
 import { toast } from "sonner";
 
 export const Route = createFileRoute("/")({
@@ -116,6 +116,27 @@ function Index() {
               <p className="text-sm text-muted-foreground">Descubre las piezas favoritas de Anita</p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* SERVICIOS */}
+      <section className="border-b border-border bg-background">
+        <div className="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10">
+          {[
+            { Icon: Sparkles, title: "Hecho a mano", text: "Pequeñas series, cuidadas al detalle por Anita." },
+            { Icon: Truck, title: "Envío gratis +60€", text: "A toda España en 2–4 días laborables." },
+            { Icon: RotateCcw, title: "Devoluciones 14 días", text: "Cambios y devoluciones sin complicaciones." },
+          ].map(({ Icon, title, text }) => (
+            <div key={title} className="flex items-start gap-4">
+              <div className="h-10 w-10 flex items-center justify-center border border-border flex-shrink-0">
+                <Icon className="h-4 w-4" />
+              </div>
+              <div>
+                <p className="text-xs uppercase tracking-widest font-medium mb-1">{title}</p>
+                <p className="text-sm text-muted-foreground">{text}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
