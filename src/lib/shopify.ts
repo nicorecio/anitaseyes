@@ -29,6 +29,7 @@ export interface ShopifyProduct {
       }>;
     };
     options: Array<{ name: string; values: string[] }>;
+    tags?: string[];
   };
 }
 
