@@ -23,7 +23,13 @@ export function CartDrawer() {
   return (
     <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger asChild>
-        <Button variant="ghost" size="icon" className="relative text-foreground hover:bg-accent">
+        <Button
+          variant="ghost"
+          size="icon"
+          className="relative text-foreground hover:bg-accent"
+          data-cart-trigger="true"
+          aria-label={`Abrir bolso${totalItems > 0 ? `, ${totalItems} artículo${totalItems !== 1 ? "s" : ""}` : ""}`}
+        >
           <ShoppingBag className="h-5 w-5" />
           {totalItems > 0 && (
             <Badge className="absolute -top-1 -right-1 h-5 w-5 rounded-full p-0 flex items-center justify-center text-[10px] bg-foreground text-background">
