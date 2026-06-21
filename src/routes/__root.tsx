@@ -76,6 +76,7 @@ function RootComponent() {
   return (
     <>
       <Outlet />
+      <MobileMiniCart />
       <CookieConsent />
       <Toaster position="top-center" />
     </>
