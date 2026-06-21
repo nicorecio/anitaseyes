@@ -74,6 +74,35 @@ function Index() {
       .finally(() => setLoading(false));
   }, []);
 
+  // React to category selection coming from URL ?cat=... or from MobileNav events
+  useEffect(() => {
+    const applyFromUrl = () => {
+      const params = new URLSearchParams(window.location.search);
+      const cat = params.get("cat");
+      if (cat) {
+        setActiveTab(cat);
+        setTimeout(() => {
+          document.getElementById("tienda")?.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 60);
+      }
+    };
+    applyFromUrl();
+    const onCat = (e: Event) => {
+      const detail = (e as CustomEvent<string>).detail;
+      if (!detail) return;
+      setActiveTab(detail);
+      setTimeout(() => {
+        document.getElementById("tienda")?.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 60);
+    };
+    window.addEventListener("anitas:set-category", onCat);
+    window.addEventListener("popstate", applyFromUrl);
+    return () => {
+      window.removeEventListener("anitas:set-category", onCat);
+      window.removeEventListener("popstate", applyFromUrl);
+    };
+  }, []);
+
   const clothingProducts = useMemo(
     () => products.filter((p) => !isAccessory(p)),
     [products]
