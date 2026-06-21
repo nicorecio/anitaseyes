@@ -2,6 +2,7 @@ import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/r
 import { Toaster } from "@/components/ui/sonner";
 import { useCartSync } from "@/hooks/useCartSync";
 import { CookieConsent } from "@/components/CookieConsent";
+import { MobileMiniCart } from "@/components/MobileMiniCart";
 
 import appCss from "../styles.css?url";
 
