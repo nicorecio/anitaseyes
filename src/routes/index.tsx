@@ -299,14 +299,6 @@ function Index() {
           </div>
         ) : (
           <>
-            {activeTab === ALL_TAB && featured.length > 0 && (
-              <div className="mb-16">
-                <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground mb-6">Favoritos de la semana</p>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-12">
-                  {featured.map((p) => <ProductCard key={p.node.id} product={p} />)}
-                </div>
-              </div>
-            )}
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-12">
               {filtered.map((p) => <ProductCard key={p.node.id} product={p} />)}
             </div>
