@@ -236,8 +236,7 @@ function Index() {
         </div>
       </section>
 
-      {/* LOOKBOOK */}
-      {!loading && <Lookbook products={products} />}
+
 
       {/* TESTIMONIO */}
       <section className="bg-secondary border-y border-border">
