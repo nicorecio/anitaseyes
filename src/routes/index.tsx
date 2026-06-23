@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useMemo, useState } from "react";
 import { Header } from "@/components/Header";
 import { ProductCard } from "@/components/ProductCard";
-import { Lookbook } from "@/components/Lookbook";
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { storefrontApiRequest, PRODUCTS_QUERY, type ShopifyProduct } from "@/lib/shopify";
@@ -236,8 +236,7 @@ function Index() {
         </div>
       </section>
 
-      {/* LOOKBOOK */}
-      {!loading && <Lookbook products={products} />}
+
 
       {/* TESTIMONIO */}
       <section className="bg-secondary border-y border-border">
