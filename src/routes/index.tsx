@@ -204,38 +204,6 @@ function Index() {
         </div>
       </section>
 
-      {/* CATEGORÍAS DE ROPA */}
-      <section className="max-w-7xl mx-auto px-6 py-20 md:py-28">
-        <div className="flex items-end justify-between mb-12">
-          <div>
-            <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground mb-2">Compra por categoría</p>
-            <h2 className="font-serif text-4xl md:text-5xl">Nuestra ropa</h2>
-          </div>
-          <a href="#tienda" onClick={() => setActiveTab(ALL_TAB)} className="hidden md:inline-flex items-center text-sm uppercase tracking-widest hover:text-accent">
-            Ver todo <ArrowRight className="ml-2 h-4 w-4" />
-          </a>
-        </div>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
-          {CLOTHING_CATEGORIES.map((c) => (
-            <button
-              key={c.name}
-              onClick={() => goToCategory(c.name)}
-              className="group relative aspect-[3/4] overflow-hidden bg-secondary text-left"
-            >
-              <img
-                src={c.image}
-                alt={c.name}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-foreground/70 via-foreground/10 to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-4 text-background">
-                <p className="font-serif text-xl md:text-2xl">{c.name}</p>
-              </div>
-            </button>
-          ))}
-        </div>
-      </section>
-
 
 
       {/* TESTIMONIO */}
