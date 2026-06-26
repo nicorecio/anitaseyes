@@ -40,7 +40,7 @@ export const Route = createFileRoute("/product/$handle")({
       {
         name: "description",
         content:
-          "Joyería artesanal hecha a mano por Anita. Cada pieza lleva el nombre de una amiga.",
+          "Descubre la selección de ropa de Anita's Eyes: prendas cómodas, bonitas y pensadas para el día a día. Envío en 2–4 días y pago seguro.",
       },
     ],
   }),
@@ -343,8 +343,8 @@ function ProductPage() {
               <div className="flex items-start gap-2 p-3 border border-border">
                 <Sparkles className="h-4 w-4 mt-0.5 flex-shrink-0" />
                 <div>
-                  <p className="font-medium">Hecho a mano</p>
-                  <p className="text-muted-foreground">Pieza única por Anita</p>
+                  <p className="font-medium">Seleccionado por Anita</p>
+                  <p className="text-muted-foreground">Con mimo y criterio propio</p>
                 </div>
               </div>
               <div className="flex items-start gap-2 p-3 border border-border">
@@ -370,7 +370,7 @@ function ProductPage() {
                     />
                   ) : (
                     <p className="text-muted-foreground leading-relaxed">
-                      {product.description || "Pieza artesanal hecha a mano con cariño."}
+                      {product.description || "Prenda seleccionada por Anita con cariño y criterio propio."}
                     </p>
                   )}
                 </AccordionContent>
@@ -380,9 +380,9 @@ function ProductPage() {
                   Cuidados
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground leading-relaxed text-sm space-y-2">
-                  <p>Evita el contacto con perfumes, cremas y agua del mar.</p>
-                  <p>Guarda tu pieza en su bolsita para conservar su brillo.</p>
-                  <p>Limpia con un paño suave y seco.</p>
+                  <p>Lava a mano o a máquina con agua fría y programa delicada.</p>
+                  <p>Evita la secadora para conservar la forma y el tejido.</p>
+                  <p>Plancha a baja temperatura si es necesario.</p>
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="ship">

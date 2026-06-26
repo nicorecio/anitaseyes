@@ -8,17 +8,17 @@ import sobre4 from "@/assets/sobre-4.jpg";
 export const Route = createFileRoute("/sobre")({
   head: () => ({
     meta: [
-      { title: "Sobre anitas.eyes — Joyería artesanal con nombre propio" },
+      { title: "Sobre anitas.eyes — Ropa para mujeres con mirada propia" },
       {
         name: "description",
         content:
-          "anitas.eyes nace en 2020 de las manos de Anita: pendientes, pulseras y joyas hechas a mano, con nombres de amigas y precios honestos.",
+          "Anita's Eyes nació de las manos de Anita Sáez: primero joyas, luego ropa. Una selección pensada para mujeres que quieren vestirse bien sin complicarse.",
       },
       { property: "og:title", content: "Sobre anitas.eyes" },
       {
         property: "og:description",
         content:
-          "Joyería artesanal hecha con cariño desde 2020. Cada pieza lleva el nombre de una amiga.",
+          "La historia de Anita's Eyes: de la joyería artesanal a la moda accesible, siempre con el mismo punto de vista.",
       },
       { property: "og:image", content: sobre1 },
     ],
@@ -61,16 +61,17 @@ function SobrePage() {
           Desde 2020
         </p>
         <h1 className="font-serif text-5xl md:text-6xl leading-[1.05] tracking-tight mb-12">
-          Una historia hecha
+          Una mirada hecha
           <br />
-          <span className="italic text-muted-foreground">a mano.</span>
+          <span className="italic text-muted-foreground">a tu medida.</span>
         </h1>
 
         <div className="space-y-10 text-lg leading-relaxed text-foreground/90 font-light">
           <p>
-            <span className="font-serif text-2xl">a</span>nitas.eyes nació en 2020,
-            casi sin querer. Anita empezó a crear pendientes, pulseras y pequeñas
-            joyas en casa, por puro placer de hacer algo con las manos.
+            <span className="font-serif text-2xl">a</span>nitas.eyes nació en 2020
+            entre hilos, alicates y pequeñas piezas de plata. Anita Sáez empezó haciendo
+            pendientes y collares a mano, casi sin darse cuenta — por placer, por regalar,
+            por ver si podía.
           </p>
 
           {/* Polaroid 1 — derecha */}
@@ -84,9 +85,9 @@ function SobrePage() {
           </div>
 
           <p>
-            Lo que comenzó como una afición fue tomando forma cuando empezó a
-            compartir sus piezas en Instagram. Sus amigas fueron las primeras en
-            pedirle una, luego otra, y otra más.
+            Sus amigas fueron las primeras clientas. Luego las amigas de sus amigas.
+            Y así, poco a poco, lo que era una afición se convirtió en una marca
+            con nombre propio.
           </p>
 
           {/* Par de polaroids — izquierda + derecha solapadas */}
@@ -106,33 +107,38 @@ function SobrePage() {
           </div>
 
           <p>
-            Aquí no hay grandes márgenes ni fórmulas de negocio: el precio de cada
-            pieza es prácticamente lo que cuesta fabricarla. Nunca fue sobre ganar
-            dinero, sino sobre crear algo bonito y compartirlo.
+            Pero la mirada de Anita nunca se quedó quieta. Con el tiempo empezó a
+            fijarse en algo más que en las joyas: en cómo vestían esas mismas mujeres,
+            en qué les faltaba en el armario, en qué era difícil encontrar a un precio
+            honesto. Y en 2026 dio el salto.
           </p>
 
           {/* Polaroid 4 — izquierda */}
           <div className="flex justify-start my-12">
             <Polaroid
               src={sobre4}
-              caption="Mini aros, edición amigas"
+              caption="Primera colección de ropa, 2026"
               rotate="-rotate-3"
               className="w-56 sm:w-64"
             />
           </div>
 
           <p>
-            Por eso cada modelo lleva el nombre de una de sus amigas. Son piezas
-            con dedicatoria, hechas pensando en alguien concreto, en una forma de
-            ser, en una manera de mirar. De ahí el nombre:{" "}
-            <span className="italic">anitas.eyes</span> — los ojos con los que
-            Anita ve a las mujeres que la rodean.
+            Hoy Anita's Eyes es una tienda de ropa para mujeres — tops, camisas,
+            vestidos, faldas, pijamas — seleccionada con el mismo criterio con el que
+            Anita elige lo que se pone ella. Cómoda, bonita y para todos los días.
+          </p>
+
+          <p>
+            Y de vez en cuando, cuando las ganas y los materiales se alinean, Anita
+            vuelve a sus raíces: una colección pequeña de joyas artesanales, exclusivas
+            y limitadas. Porque de donde venimos no se olvida.
           </p>
         </div>
 
         <div className="mt-20 pt-10 border-t border-border flex flex-col sm:flex-row gap-6 sm:items-center sm:justify-between">
           <p className="font-serif italic text-xl text-muted-foreground">
-            Hecho a mano, con nombre y apellido.
+            Ropa con criterio. Joyas con historia.
           </p>
           <Link
             to="/"

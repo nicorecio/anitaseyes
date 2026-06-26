@@ -360,7 +360,7 @@ function Index() {
           <div>
             <p className="font-serif text-2xl mb-3">anitas.eyes</p>
             <p className="text-muted-foreground max-w-sm">
-              Ropa para mujeres con mirada propia. Hecho con cariño.
+            Ropa seleccionada por Anita. Joyas hechas por Anita. Todo con cariño.
             </p>
           </div>
           <div>
