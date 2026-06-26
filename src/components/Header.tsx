@@ -13,8 +13,7 @@ export function Header() {
         <nav className="hidden md:flex items-center gap-8 text-sm uppercase tracking-widest">
           <Link to="/" hash="tienda" className="hover:text-muted-foreground transition">Ropa</Link>
           <Link to="/" hash="tienda" className="hover:text-muted-foreground transition">Accesorios</Link>
-          <Link to="/sobre" className="hover:text-muted-foreground transition">Sobre</Link>
-          <a href="https://www.instagram.com/anitas.eyes/" target="_blank" rel="noreferrer" className="hover:text-muted-foreground transition">Instagram</a>
+          <Link to="/sobre" className="hover:text-muted-foreground transition">Sobre Anita</Link>
         </nav>
         <div className="flex items-center gap-1 shrink-0">
           <CartDrawer />
