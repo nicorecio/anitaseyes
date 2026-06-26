@@ -145,7 +145,7 @@ function Index() {
 
       {/* HERO */}
       <section className="relative overflow-hidden border-b border-border">
-        <div className="max-w-7xl mx-auto px-6 py-24 md:py-36 grid md:grid-cols-2 gap-12 items-center">
+        <div className="max-w-7xl mx-auto px-6 py-12 md:py-20 grid md:grid-cols-2 gap-12 items-center">
           <div>
             <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground mb-6">
               Nueva colección · Mujer
@@ -160,11 +160,6 @@ function Index() {
               <Button size="lg" asChild>
                 <a href="#tienda" onClick={() => setActiveTab(ALL_TAB)}>
                   Ver colección <ArrowRight className="ml-2 h-4 w-4" />
-                </a>
-              </Button>
-              <Button size="lg" variant="outline" asChild>
-                <a href="https://www.instagram.com/anitas.eyes/" target="_blank" rel="noreferrer">
-                  <Instagram className="mr-2 h-4 w-4" /> @anitas.eyes
                 </a>
               </Button>
             </div>
