@@ -12,13 +12,13 @@ export const Route = createFileRoute("/sobre")({
       {
         name: "description",
         content:
-          "Anita's Eyes es la tienda de ropa de Anita Sáez: una selección pensada para mujeres que quieren vestirse bien sin complicarse.",
+          "Anita's Eyes nació de las manos de Anita Sáez: primero joyas, luego ropa. Una selección pensada para mujeres que quieren vestirse bien sin complicarse.",
       },
       { property: "og:title", content: "Sobre anitas.eyes" },
       {
         property: "og:description",
         content:
-          "La historia de Anita's Eyes: moda accesible y con criterio, elegida por Anita.",
+          "La historia de Anita's Eyes: de la joyería artesanal a la moda accesible, siempre con el mismo punto de vista.",
       },
       { property: "og:image", content: sobre1 },
     ],
@@ -69,47 +69,48 @@ function SobrePage() {
         <div className="space-y-10 text-lg leading-relaxed text-foreground/90 font-light">
           <p>
             <span className="font-serif text-2xl">a</span>nitas.eyes nació en 2020
-            de la mirada de Anita Sáez: una manera muy suya de elegir lo que se pone,
-            de mezclar prendas y de saber qué le sienta bien a cada mujer.
+            entre hilos, alicates y pequeñas piezas de plata. Anita Sáez empezó haciendo
+            pendientes y collares a mano, casi sin darse cuenta — por placer, por regalar,
+            por ver si podía.
           </p>
 
           {/* Polaroid 1 — derecha */}
           <div className="flex justify-end my-12">
             <Polaroid
               src={sobre1}
-              caption="Las primeras prendas, 2020"
+              caption="Las primeras piezas, 2020"
               rotate="rotate-3"
               className="w-56 sm:w-64"
             />
           </div>
 
           <p>
-            Sus amigas fueron las primeras clientas. Le pedían consejo, le copiaban
-            los looks, le preguntaban dónde compraba. Y así, casi sin darse cuenta,
-            lo que era un ojo entrenado se convirtió en una marca con nombre propio.
+            Sus amigas fueron las primeras clientas. Luego las amigas de sus amigas.
+            Y así, poco a poco, lo que era una afición se convirtió en una marca
+            con nombre propio.
           </p>
 
           {/* Par de polaroids — izquierda + derecha solapadas */}
           <div className="relative flex justify-center items-center gap-4 my-16 py-8">
             <Polaroid
               src={sobre2}
-              caption="Camisa favorita del verano"
+              caption="Pendientes a juego"
               rotate="-rotate-6"
               className="w-44 sm:w-52 -mr-4 z-10"
             />
             <Polaroid
               src={sobre3}
-              caption="Vestidos para todos los días"
+              caption="Aros con esmeralda"
               rotate="rotate-6"
               className="w-44 sm:w-52 mt-8"
             />
           </div>
 
           <p>
-            La mirada de Anita nunca se quedó quieta. Se fijaba en qué les faltaba
-            a sus amigas en el armario, en qué era difícil encontrar a un precio
-            honesto, en qué prenda repetían una y otra vez. Y de ahí nació la
-            primera colección propia.
+            Pero la mirada de Anita nunca se quedó quieta. Con el tiempo empezó a
+            fijarse en algo más que en las joyas: en cómo vestían esas mismas mujeres,
+            en qué les faltaba en el armario, en qué era difícil encontrar a un precio
+            honesto. Y en 2026 dio el salto.
           </p>
 
           {/* Polaroid 4 — izquierda */}
@@ -127,11 +128,17 @@ function SobrePage() {
             vestidos, faldas, pijamas — seleccionada con el mismo criterio con el que
             Anita elige lo que se pone ella. Cómoda, bonita y para todos los días.
           </p>
+
+          <p>
+            Y de vez en cuando, cuando las ganas y los materiales se alinean, Anita
+            vuelve a sus raíces: una colección pequeña de joyas artesanales, exclusivas
+            y limitadas. Porque de donde venimos no se olvida.
+          </p>
         </div>
 
         <div className="mt-20 pt-10 border-t border-border flex flex-col sm:flex-row gap-6 sm:items-center sm:justify-between">
           <p className="font-serif italic text-xl text-muted-foreground">
-            Ropa con criterio. Mirada propia.
+            Ropa con criterio. Joyas con historia.
           </p>
           <Link
             to="/"
