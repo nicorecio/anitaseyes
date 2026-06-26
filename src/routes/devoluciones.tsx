@@ -33,8 +33,8 @@ function DevolucionesPage() {
           <section>
             <h2 className="font-serif text-2xl text-foreground mb-3">Condiciones</h2>
             <ul className="list-disc pl-5 space-y-2">
-              <li>La pieza debe estar sin usar, en perfecto estado y con su embalaje original.</li>
-              <li>No se aceptan devoluciones de pendientes (por higiene), piezas personalizadas ni rebajadas.</li>
+              <li>La prenda debe estar sin usar, en perfecto estado y con su embalaje original.</li>
+              <li>No se aceptan devoluciones de prendas rebajadas o en promoción.</li>
               <li>Los gastos de envío de la devolución corren por cuenta de la persona compradora.</li>
             </ul>
           </section>
@@ -44,7 +44,7 @@ function DevolucionesPage() {
             <ol className="list-decimal pl-5 space-y-2">
               <li>Escríbenos a <a className="underline hover:text-accent" href="mailto:hola@anitaseyes.com">hola@anitaseyes.com</a> con tu número de pedido.</li>
               <li>Te enviamos la dirección y las instrucciones para el envío de vuelta.</li>
-              <li>En cuanto recibamos y revisemos la pieza, tramitamos el reembolso.</li>
+              <li>En cuanto recibamos y revisemos la prenda, tramitamos el reembolso.</li>
             </ol>
           </section>
 
@@ -52,14 +52,14 @@ function DevolucionesPage() {
             <h2 className="font-serif text-2xl text-foreground mb-3">Reembolso</h2>
             <p>
               Devolvemos el importe por el mismo método de pago en un plazo máximo de <strong>14 días</strong> desde
-              la recepción de la pieza. El coste original del envío no es reembolsable salvo en caso de defecto o error.
+              la recepción de la prenda. El coste original del envío no es reembolsable salvo en caso de defecto o error.
             </p>
           </section>
 
           <section>
             <h2 className="font-serif text-2xl text-foreground mb-3">Piezas defectuosas</h2>
             <p>
-              Si tu pieza llega dañada o con un defecto, escríbenos en las primeras 48 horas con fotos y nos hacemos
+              Si tu prenda llega dañada o con un defecto, escríbenos en las primeras 48 horas con fotos y nos hacemos
               cargo del envío de la devolución y del reemplazo o reembolso.
             </p>
           </section>

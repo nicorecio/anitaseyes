@@ -188,7 +188,7 @@ function Index() {
         <div className="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10">
           {[
             { Icon: Sparkles, title: "Seleccionado con mimo", text: "Tejidos cuidados y prendas pensadas para sentirte bien." },
-            { Icon: Truck, title: "Envío gratis +60€", text: "A toda España en 2–4 días laborables." },
+            { Icon: Truck, title: "Envío gratis +45€", text: "A toda España en 2–4 días laborables." },
             { Icon: RotateCcw, title: "Devoluciones 14 días", text: "Cambios de talla y devoluciones sin complicaciones." },
           ].map(({ Icon, title, text }) => (
             <div key={title} className="flex items-start gap-4">
