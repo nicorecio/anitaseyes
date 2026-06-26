@@ -145,7 +145,7 @@ function Index() {
 
       {/* HERO */}
       <section className="relative overflow-hidden border-b border-border">
-        <div className="max-w-7xl mx-auto px-6 py-12 md:py-20 grid md:grid-cols-2 gap-12 items-center">
+        <div className="max-w-7xl mx-auto px-6 pt-4 pb-12 md:pt-6 md:pb-20 grid md:grid-cols-2 gap-12 items-center">
           <div>
             <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground mb-6">
               Nueva colección · Mujer
