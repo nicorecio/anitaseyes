@@ -24,7 +24,7 @@ const CLOTHING_CATEGORIES = [
   {
     name: "Tops",
     keywords: ["top", "tops"],
-    image: "https://images.unsplash.com/photo-1564257577-2d3ee9c8e3a6?w=900&q=80",
+    image: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=900&q=80",
   },
   {
     name: "Camisas y blusas",
