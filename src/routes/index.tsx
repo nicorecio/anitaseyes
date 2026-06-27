@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useMemo, useState } from "react";
 import { Header } from "@/components/Header";
+import { AnimatedLogo } from "@/components/AnimatedLogo";
 import { ProductCard } from "@/components/ProductCard";
 import heroAnita from "@/assets/hero-anita.jpg.asset.json";
 
@@ -142,11 +143,13 @@ function Index() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <Header />
+      <Header hideLogo />
+      <AnimatedLogo />
 
       {/* HERO */}
       <section className="relative overflow-hidden border-b border-border">
-        <div className="max-w-7xl mx-auto px-6 pt-4 pb-12 md:pt-6 md:pb-20 grid md:grid-cols-2 gap-12 items-center">
+        <div aria-hidden className="h-56 md:h-80" />
+        <div className="max-w-7xl mx-auto px-6 pb-12 md:pb-20 grid md:grid-cols-2 gap-12 items-center">
           <div>
             <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground mb-6">
               Nueva colección · Mujer
