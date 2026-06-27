@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useMemo, useState } from "react";
 import { Header } from "@/components/Header";
 import { ProductCard } from "@/components/ProductCard";
+import heroAnita from "@/assets/hero-anita.jpg.asset.json";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -166,8 +167,8 @@ function Index() {
           </div>
           <div className="relative aspect-[4/5] bg-secondary overflow-hidden">
             <img
-              src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1000&q=80"
-              alt="Anitas Eyes — nueva colección de ropa"
+              src={heroAnita.url}
+              alt="Anita — Anitas Eyes"
               className="w-full h-full object-cover"
             />
             <div className="absolute bottom-6 left-6 right-6 bg-background/90 backdrop-blur p-4">
