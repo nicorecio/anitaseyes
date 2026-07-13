@@ -254,7 +254,7 @@ function Index() {
 
         {/* Tabs categorías */}
         <div className="flex flex-wrap gap-2 mb-10 border-b border-border pb-4">
-          {[ALL_TAB, ...CLOTHING_CATEGORIES.map((c) => c.name), ACCESSORIES_TAB].map((t) => (
+          {[NEW_IN_TAB, ALL_TAB, ...CLOTHING_CATEGORIES.map((c) => c.name), ACCESSORIES_TAB, ...ACCESSORY_SUBCATS.map((c) => c.name)].map((t) => (
             <button
               key={t}
               onClick={() => setActiveTab(t)}
