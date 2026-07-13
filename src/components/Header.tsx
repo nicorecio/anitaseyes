@@ -3,6 +3,40 @@ import { CartDrawer } from "./CartDrawer";
 import { MobileNav } from "./MobileNav";
 import logoAsset from "@/assets/anitas-eyes-logo.png.asset.json";
 
+const ROPA_SUBCATS = ["Tops", "Camisas y blusas", "Vestidos", "Faldas", "Pijamas"];
+const ACCESORIOS_SUBCATS = ["Pendientes", "Collares", "Anillos", "Pulseras"];
+
+function NavDropdown({ label, items }: { label: string; items: string[] }) {
+  return (
+    <div className="relative group">
+      <Link
+        to="/"
+        search={{ cat: label === "Ropa" ? "Todo" : "Accesorios" }}
+        hash="tienda"
+        className="hover:text-muted-foreground transition inline-block py-2"
+      >
+        {label}
+      </Link>
+      <div className="absolute left-1/2 -translate-x-1/2 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-150 z-50">
+        <ul className="min-w-[220px] bg-background border border-border shadow-lg py-2 normal-case tracking-normal">
+          {items.map((item) => (
+            <li key={item}>
+              <Link
+                to="/"
+                search={{ cat: item }}
+                hash="tienda"
+                className="block px-4 py-2 text-sm hover:bg-secondary transition"
+              >
+                {item}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+}
+
 export function Header({ hideLogo = false }: { hideLogo?: boolean }) {
   return (
     <header className="sticky top-0 z-40 backdrop-blur-md bg-background/80 border-b border-border">
@@ -15,8 +49,9 @@ export function Header({ hideLogo = false }: { hideLogo?: boolean }) {
           />
         </Link>
         <nav className="hidden md:flex items-center gap-8 text-sm uppercase tracking-widest">
-          <Link to="/" hash="tienda" className="hover:text-muted-foreground transition">Ropa</Link>
-          <Link to="/" hash="tienda" className="hover:text-muted-foreground transition">Accesorios</Link>
+          <Link to="/" search={{ cat: "New In" }} hash="tienda" className="hover:text-muted-foreground transition">New In</Link>
+          <NavDropdown label="Ropa" items={ROPA_SUBCATS} />
+          <NavDropdown label="Accesorios" items={ACCESORIOS_SUBCATS} />
           <Link to="/sobre" className="hover:text-muted-foreground transition">Sobre Anita</Link>
         </nav>
         <div className="flex items-center gap-1 shrink-0">
