@@ -130,11 +130,18 @@ function Index() {
 
   const filtered = useMemo(() => {
     if (activeTab === ALL_TAB) return clothingProducts.length ? clothingProducts : products;
+    if (activeTab === NEW_IN_TAB) {
+      const news = products.filter(isNewIn);
+      return news.length ? news : products.slice(0, 8);
+    }
     if (activeTab === ACCESSORIES_TAB) return accessoryProducts;
+    const accSub = ACCESSORY_SUBCATS.find((c) => c.name === activeTab);
+    if (accSub) return products.filter((p) => matchesCategory(p, accSub.keywords));
     const cat = CLOTHING_CATEGORIES.find((c) => c.name === activeTab);
     if (!cat) return products;
     return products.filter((p) => matchesCategory(p, cat.keywords));
   }, [activeTab, products, clothingProducts, accessoryProducts]);
+
 
   const featured = useMemo(
     () => (clothingProducts.length ? clothingProducts : products).slice(0, 4),
