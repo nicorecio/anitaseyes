@@ -52,6 +52,14 @@ const CLOTHING_CATEGORIES = [
 
 const ALL_TAB = "Todo";
 const ACCESSORIES_TAB = "Accesorios";
+const NEW_IN_TAB = "New In";
+
+const ACCESSORY_SUBCATS: { name: string; keywords: string[] }[] = [
+  { name: "Pendientes", keywords: ["pendiente", "pendientes"] },
+  { name: "Collares", keywords: ["collar", "collares"] },
+  { name: "Anillos", keywords: ["anillo", "anillos"] },
+  { name: "Pulseras", keywords: ["pulsera", "pulseras"] },
+];
 
 function matchesCategory(p: ShopifyProduct, keywords: string[]) {
   const hay = `${p.node.title} ${p.node.tags?.join(" ") ?? ""} ${(p.node as any).productType ?? ""}`.toLowerCase();
@@ -62,6 +70,12 @@ function isAccessory(p: ShopifyProduct) {
   const hay = `${p.node.title} ${p.node.tags?.join(" ") ?? ""} ${(p.node as any).productType ?? ""}`.toLowerCase();
   return ["pendiente", "collar", "anillo", "pulsera", "accesorio", "joya", "joyer"].some((k) => hay.includes(k));
 }
+
+function isNewIn(p: ShopifyProduct) {
+  const hay = `${p.node.title} ${p.node.tags?.join(" ") ?? ""}`.toLowerCase();
+  return hay.includes("new") || hay.includes("nuevo") || hay.includes("novedad");
+}
+
 
 function Index() {
   const [products, setProducts] = useState<ShopifyProduct[]>([]);
@@ -116,11 +130,18 @@ function Index() {
 
   const filtered = useMemo(() => {
     if (activeTab === ALL_TAB) return clothingProducts.length ? clothingProducts : products;
+    if (activeTab === NEW_IN_TAB) {
+      const news = products.filter(isNewIn);
+      return news.length ? news : products.slice(0, 8);
+    }
     if (activeTab === ACCESSORIES_TAB) return accessoryProducts;
+    const accSub = ACCESSORY_SUBCATS.find((c) => c.name === activeTab);
+    if (accSub) return products.filter((p) => matchesCategory(p, accSub.keywords));
     const cat = CLOTHING_CATEGORIES.find((c) => c.name === activeTab);
     if (!cat) return products;
     return products.filter((p) => matchesCategory(p, cat.keywords));
   }, [activeTab, products, clothingProducts, accessoryProducts]);
+
 
   const featured = useMemo(
     () => (clothingProducts.length ? clothingProducts : products).slice(0, 4),
@@ -233,7 +254,7 @@ function Index() {
 
         {/* Tabs categorías */}
         <div className="flex flex-wrap gap-2 mb-10 border-b border-border pb-4">
-          {[ALL_TAB, ...CLOTHING_CATEGORIES.map((c) => c.name), ACCESSORIES_TAB].map((t) => (
+          {[NEW_IN_TAB, ALL_TAB, ...CLOTHING_CATEGORIES.map((c) => c.name), ACCESSORIES_TAB, ...ACCESSORY_SUBCATS.map((c) => c.name)].map((t) => (
             <button
               key={t}
               onClick={() => setActiveTab(t)}
