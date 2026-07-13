@@ -52,6 +52,14 @@ const CLOTHING_CATEGORIES = [
 
 const ALL_TAB = "Todo";
 const ACCESSORIES_TAB = "Accesorios";
+const NEW_IN_TAB = "New In";
+
+const ACCESSORY_SUBCATS: { name: string; keywords: string[] }[] = [
+  { name: "Pendientes", keywords: ["pendiente", "pendientes"] },
+  { name: "Collares", keywords: ["collar", "collares"] },
+  { name: "Anillos", keywords: ["anillo", "anillos"] },
+  { name: "Pulseras", keywords: ["pulsera", "pulseras"] },
+];
 
 function matchesCategory(p: ShopifyProduct, keywords: string[]) {
   const hay = `${p.node.title} ${p.node.tags?.join(" ") ?? ""} ${(p.node as any).productType ?? ""}`.toLowerCase();
@@ -62,6 +70,12 @@ function isAccessory(p: ShopifyProduct) {
   const hay = `${p.node.title} ${p.node.tags?.join(" ") ?? ""} ${(p.node as any).productType ?? ""}`.toLowerCase();
   return ["pendiente", "collar", "anillo", "pulsera", "accesorio", "joya", "joyer"].some((k) => hay.includes(k));
 }
+
+function isNewIn(p: ShopifyProduct) {
+  const hay = `${p.node.title} ${p.node.tags?.join(" ") ?? ""}`.toLowerCase();
+  return hay.includes("new") || hay.includes("nuevo") || hay.includes("novedad");
+}
+
 
 function Index() {
   const [products, setProducts] = useState<ShopifyProduct[]>([]);
