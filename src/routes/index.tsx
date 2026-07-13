@@ -208,7 +208,7 @@ function Index() {
       {/* TESTIMONIO */}
       <section className="bg-secondary border-y border-border">
         <div className="max-w-4xl mx-auto px-6 py-20 md:py-28 text-center">
-          <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground mb-8">En palabras de Anita</p>
+          <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground mb-8">EL CONCEPTO DE ANITA'S EYES:</p>
           <blockquote className="font-serif text-3xl md:text-5xl leading-tight italic">
             “Quería una marca de ropa cercana —
             <span className="text-accent"> bonita, cómoda y para llevar todos los días.</span>”
