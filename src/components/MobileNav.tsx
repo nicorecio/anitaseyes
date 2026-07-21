@@ -2,15 +2,12 @@ import { useState } from "react";
 import { Link, useNavigate, useRouterState } from "@tanstack/react-router";
 import { Menu, Instagram, ChevronRight } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger, SheetHeader, SheetTitle, SheetClose } from "@/components/ui/sheet";
-import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 
 const CATEGORIES = [
-  "Tops",
-  "Camisas y blusas",
-  "Vestidos",
-  "Faldas",
-  "Pijamas",
+  "Todo",
+  "Ropa",
   "Accesorios",
+  "New In",
 ];
 
 export function MobileNav() {
@@ -23,7 +20,6 @@ export function MobileNav() {
     if (pathname !== "/") {
       await navigate({ to: "/", search: { cat } as any, hash: "tienda" });
     } else {
-      // Already on home — communicate via custom event and update URL without jump
       window.history.replaceState(null, "", `/?cat=${encodeURIComponent(cat)}#tienda`);
       window.dispatchEvent(new CustomEvent("anitas:set-category", { detail: cat }));
     }
@@ -52,35 +48,26 @@ export function MobileNav() {
             </Link>
           </SheetClose>
 
-          <Accordion type="single" collapsible defaultValue="cat" className="px-4">
-            <AccordionItem value="cat" className="border-0">
-              <AccordionTrigger className="text-sm uppercase tracking-widest hover:no-underline min-h-11 py-3">
-                Categorías
-              </AccordionTrigger>
-              <AccordionContent className="pb-2">
-                <ul className="flex flex-col">
-                  {CATEGORIES.map((c) => (
-                    <li key={c}>
-                      <button
-                        onClick={() => goToCategory(c)}
-                        className="w-full text-left flex items-center justify-between px-2 py-3 text-sm rounded-md hover:bg-secondary min-h-11"
-                      >
-                        <span>{c}</span>
-                        <ChevronRight className="h-4 w-4 text-muted-foreground" />
-                      </button>
-                    </li>
-                  ))}
-                </ul>
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
+          <ul className="flex flex-col px-2">
+            {CATEGORIES.map((c) => (
+              <li key={c}>
+                <button
+                  onClick={() => goToCategory(c)}
+                  className="w-full text-left flex items-center justify-between px-2 py-3 text-sm uppercase tracking-widest rounded-md hover:bg-secondary min-h-11"
+                >
+                  <span>{c}</span>
+                  <ChevronRight className="h-4 w-4 text-muted-foreground" />
+                </button>
+              </li>
+            ))}
+          </ul>
 
           <SheetClose asChild>
             <Link
               to="/sobre"
               className="flex items-center justify-between px-4 py-4 text-sm uppercase tracking-widest rounded-md hover:bg-secondary min-h-11"
             >
-              Sobre <ChevronRight className="h-4 w-4 text-muted-foreground" />
+              Sobre Anita <ChevronRight className="h-4 w-4 text-muted-foreground" />
             </Link>
           </SheetClose>
 
