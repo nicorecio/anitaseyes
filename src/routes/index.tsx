@@ -129,7 +129,8 @@ function Index() {
   );
 
   const filtered = useMemo(() => {
-    if (activeTab === ALL_TAB) return clothingProducts.length ? clothingProducts : products;
+    if (activeTab === ALL_TAB) return products;
+    if (activeTab === "Ropa") return clothingProducts.length ? clothingProducts : products;
     if (activeTab === NEW_IN_TAB) {
       const news = products.filter(isNewIn);
       return news.length ? news : products.slice(0, 8);
@@ -195,10 +196,7 @@ function Index() {
               alt="Anita — Anitas Eyes"
               className="w-full h-full object-cover"
             />
-            <div className="absolute bottom-6 left-6 right-6 bg-background/90 backdrop-blur p-4">
-              <p className="font-serif text-xl">Nueva temporada</p>
-              <p className="text-sm text-muted-foreground">Las prendas favoritas de Anita</p>
-            </div>
+
           </div>
         </div>
       </section>
@@ -254,7 +252,7 @@ function Index() {
 
         {/* Tabs categorías */}
         <div className="flex flex-wrap gap-2 mb-10 border-b border-border pb-4">
-          {[NEW_IN_TAB, ALL_TAB, ...CLOTHING_CATEGORIES.map((c) => c.name), ACCESSORIES_TAB, ...ACCESSORY_SUBCATS.map((c) => c.name)].map((t) => (
+          {[ALL_TAB, "Ropa", ACCESSORIES_TAB, NEW_IN_TAB].map((t) => (
             <button
               key={t}
               onClick={() => setActiveTab(t)}
