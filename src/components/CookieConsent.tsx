@@ -34,24 +34,24 @@ export function CookieConsent() {
       role="dialog"
       aria-live="polite"
       aria-label="Aviso de cookies"
-      className="fixed inset-x-0 bottom-0 z-50 p-4 sm:p-6 pointer-events-none"
+      className="fixed inset-x-0 bottom-0 z-50 pointer-events-none"
     >
-      <div className="pointer-events-auto max-w-4xl mx-auto bg-background border border-border shadow-lg p-5 sm:p-6 flex flex-col md:flex-row md:items-center gap-4">
-        <p className="text-sm text-muted-foreground flex-1">
-          Usamos cookies propias y de terceros para mejorar tu experiencia y analizar el uso de la web. Puedes aceptar
-          todas o rechazar las opcionales. Más detalle en nuestra{" "}
-          <Link to="/cookies" className="underline hover:text-accent text-foreground">
-            política de cookies
-          </Link>
-          .
-        </p>
-        <div className="flex gap-3 shrink-0">
-          <Button variant="outline" size="sm" onClick={() => decide("rejected")}>
-            Rechazar
-          </Button>
-          <Button size="sm" onClick={() => decide("accepted")}>
-            Aceptar
-          </Button>
+      <div className="pointer-events-auto bg-background border-t border-border px-4 py-2 sm:py-3 shadow-[0_-4px_20px_rgba(0,0,0,0.05)]">
+        <div className="max-w-5xl mx-auto flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+          <p className="text-xs sm:text-sm text-muted-foreground flex-1 leading-snug">
+            Usamos cookies para mejorar tu experiencia.{" "}
+            <Link to="/cookies" className="underline hover:text-accent text-foreground whitespace-nowrap">
+              política de cookies
+            </Link>
+          </p>
+          <div className="flex gap-2 shrink-0">
+            <Button variant="outline" size="sm" className="h-7 text-xs px-2.5" onClick={() => decide("rejected")}>
+              Rechazar
+            </Button>
+            <Button size="sm" className="h-7 text-xs px-2.5" onClick={() => decide("accepted")}>
+              Aceptar
+            </Button>
+          </div>
         </div>
       </div>
     </div>
