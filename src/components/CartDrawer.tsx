@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { ShoppingBag, Minus, Plus, Trash2, ExternalLink, Loader2, Truck } from "lucide-react";
 
-const FREE_SHIPPING_THRESHOLD = 60;
+const FREE_SHIPPING_THRESHOLD = 45;
 import { useCartStore } from "@/stores/cartStore";
 
 export function CartDrawer() {
@@ -17,7 +17,7 @@ export function CartDrawer() {
 
   const handleCheckout = () => {
     const url = getCheckoutUrl();
-    if (url) { window.open(url, "_blank"); setOpen(false); }
+    if (url) { window.location.href = url; setOpen(false); }
   };
 
   return (

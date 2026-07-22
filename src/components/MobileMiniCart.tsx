@@ -36,7 +36,7 @@ export function MobileMiniCart() {
 
   const checkout = () => {
     const url = getCheckoutUrl();
-    if (url) window.open(url, "_blank");
+    if (url) window.location.href = url;
   };
 
   const busy = isLoading || isSyncing;

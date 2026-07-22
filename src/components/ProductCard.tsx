@@ -48,7 +48,7 @@ export function ProductCard({ product }: { product: ShopifyProduct }) {
       </div>
       <h3 className="font-medium text-sm uppercase tracking-wide">{p.title}</h3>
       <p className="text-sm text-muted-foreground mt-1">
-        {price.currencyCode} {parseFloat(price.amount).toFixed(2)}
+        {new Intl.NumberFormat('es-ES', { style: 'currency', currency: price.currencyCode }).format(parseFloat(price.amount))}
       </p>
     </Link>
   );

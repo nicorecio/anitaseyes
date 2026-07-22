@@ -236,8 +236,7 @@ function ProductPage() {
               {product.title}
             </h1>
             <p className="text-2xl font-light mb-2">
-              {variant?.price.currencyCode}{" "}
-              {parseFloat(variant?.price.amount ?? "0").toFixed(2)}
+              {new Intl.NumberFormat('es-ES', { style: 'currency', currency: variant?.price.currencyCode ?? 'EUR' }).format(parseFloat(variant?.price.amount ?? "0"))}
             </p>
             <p className="text-xs text-muted-foreground mb-8">
               Impuestos incluidos · Envío calculado al pagar
