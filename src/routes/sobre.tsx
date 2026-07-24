@@ -12,7 +12,7 @@ export const Route = createFileRoute("/sobre")({
       {
         name: "description",
         content:
-          "Anita's Eyes nació de las manos de Anita Sáez: primero joyas, luego ropa. Una selección pensada para mujeres que quieren vestirse bien sin complicarse.",
+          "Anita's Eyes nació de las manos de Anita's Eyes: primero joyas, luego ropa. Una selección pensada para mujeres que quieren vestirse bien sin complicarse.",
       },
       { property: "og:title", content: "Sobre anitas.eyes" },
       {
@@ -69,7 +69,7 @@ function SobrePage() {
         <div className="space-y-10 text-lg leading-relaxed text-foreground/90 font-light">
           <p>
             <span className="font-serif text-2xl">a</span>nitas.eyes nació en 2020
-            entre hilos, alicates y pequeñas piezas de plata. Anita Sáez empezó haciendo
+            entre hilos, alicates y pequeñas piezas de plata. Anita's Eyes empezó haciendo
             pendientes y collares a mano, casi sin darse cuenta — por placer, por regalar,
             por ver si podía.
           </p>
