@@ -170,7 +170,7 @@ function Index() {
 
       {/* HERO */}
       <section className="relative overflow-hidden border-b border-border">
-        <div aria-hidden className="h-56 md:h-80" />
+        <div aria-hidden className="h-36 md:h-80" />
         <div className="max-w-7xl mx-auto px-6 pb-12 md:pb-20 grid md:grid-cols-2 gap-12 items-center">
           <div>
             <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground mb-6">
@@ -193,8 +193,8 @@ function Index() {
           <div className="relative aspect-[4/5] bg-secondary overflow-hidden">
             <img
               src={heroAnita.url}
-              alt="Anita — Anitas Eyes"
-              className="w-full h-full object-cover"
+              alt="Anita — Anita's Eyes"
+              className="w-full h-full object-cover object-top"
             />
 
           </div>
