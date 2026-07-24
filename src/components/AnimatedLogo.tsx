@@ -22,7 +22,7 @@ export function AnimatedLogo() {
       onClick={handleClick}
       className={`fixed z-50 w-auto transition-all duration-700 ease-in-out ${
         scrolled
-          ? "top-4 left-6 h-12 md:top-2 md:h-20 cursor-pointer"
+          ? "top-4 left-6 md:left-6 lg:left-[max(1.5rem,calc((100vw-80rem)/2+1.5rem))] h-12 md:top-2 md:h-20 cursor-pointer"
           : "top-20 left-1/2 -translate-x-1/2 h-24 md:top-24 md:h-72 pointer-events-none"
       }`}
     />
