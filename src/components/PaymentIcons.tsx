@@ -49,26 +49,11 @@ export const ApplePayIcon: React.FC<IconProps> = ({ className = "h-4 w-auto" }) 
 );
 
 export const BizumIcon: React.FC<IconProps> = ({ className = "h-4 w-auto" }) => (
-  <svg
-    role="img"
-    viewBox="0 0 48 24"
-    xmlns="http://www.w3.org/2000/svg"
-    className={className}
-    fill="currentColor"
-    aria-label="Bizum"
-  >
-    <title>Bizum</title>
-    <text
-      x="50%"
-      y="50%"
-      dominantBaseline="middle"
-      textAnchor="middle"
-      fontSize="13"
-      fontWeight="700"
-      fontFamily="system-ui, -apple-system, sans-serif"
-      letterSpacing="0.02em"
-    >
-      BIZUM
-    </text>
-  </svg>
+  <img
+    src={bizumLogo.url}
+    alt="Bizum"
+    className={`${className} grayscale opacity-70`}
+    loading="lazy"
+  />
 );
+
