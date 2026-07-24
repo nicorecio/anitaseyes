@@ -3,6 +3,7 @@ import { useEffect, useMemo, useState } from "react";
 import { Header } from "@/components/Header";
 import { AnimatedLogo } from "@/components/AnimatedLogo";
 import { ProductCard } from "@/components/ProductCard";
+import { VisaIcon, MastercardIcon, ApplePayIcon, BizumIcon } from "@/components/PaymentIcons";
 import heroAnita from "@/assets/hero-anita.jpg.asset.json";
 
 import { Button } from "@/components/ui/button";
@@ -367,11 +368,11 @@ function Index() {
               <Link to="/privacidad" className="hover:text-accent">Privacidad</Link>
               <Link to="/cookies" className="hover:text-accent">Cookies</Link>
               <span className="text-muted-foreground/40">·</span>
-              <span className="flex items-center gap-2">
-                <span className="border border-border rounded px-2 py-0.5 font-medium text-foreground">VISA</span>
-                <span className="border border-border rounded px-2 py-0.5 font-medium text-foreground">MC</span>
-                <span className="border border-border rounded px-2 py-0.5 font-medium text-foreground">Bizum</span>
-                <span className="border border-border rounded px-2 py-0.5 font-medium text-foreground"> Pay</span>
+              <span className="flex items-center gap-2 text-muted-foreground" aria-label="Métodos de pago aceptados">
+                <VisaIcon className="h-4 w-auto" />
+                <MastercardIcon className="h-4 w-auto" />
+                <ApplePayIcon className="h-4 w-auto" />
+                <BizumIcon className="h-4 w-auto" />
               </span>
             </div>
           </div>
