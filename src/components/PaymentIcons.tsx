@@ -1,8 +1,10 @@
 import React from "react";
+import bizumLogo from "@/assets/bizum-logo.png.asset.json";
 
 interface IconProps {
   className?: string;
 }
+
 
 export const VisaIcon: React.FC<IconProps> = ({ className = "h-4 w-auto" }) => (
   <svg
