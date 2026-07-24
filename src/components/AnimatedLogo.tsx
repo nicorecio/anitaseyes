@@ -18,7 +18,7 @@ export function AnimatedLogo() {
       className={`fixed z-50 w-auto pointer-events-none transition-all duration-700 ease-in-out ${
         scrolled
           ? "top-4 left-6 h-12 md:top-2 md:h-20"
-          : "top-4 left-1/2 -translate-x-1/2 h-12 md:top-2 md:h-20"
+          : "top-20 left-1/2 -translate-x-1/2 h-24 md:top-24 md:h-72"
       }`}
     />
   );
