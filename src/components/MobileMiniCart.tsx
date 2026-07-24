@@ -20,9 +20,29 @@ export function MobileMiniCart() {
   const totalPrice = items.reduce((s, i) => s + parseFloat(i.price.amount) * i.quantity, 0);
   const currency = items[0]?.price.currencyCode ?? "EUR";
 
-  // Avoid SSR/hydration mismatch — only render after mount
   const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
+  const [cookieVisible, setCookieVisible] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+    // Check if cookie consent is visible
+    const checkCookie = () => {
+      try {
+        setCookieVisible(!localStorage.getItem("ae_cookie_consent"));
+      } catch {
+        setCookieVisible(false);
+      }
+    };
+    checkCookie();
+    window.addEventListener("ae:cookie-consent-reset", checkCookie);
+    // Also listen for when user accepts/rejects cookies
+    const observer = new MutationObserver(checkCookie);
+    observer.observe(document.body, { childList: true, subtree: true });
+    return () => {
+      window.removeEventListener("ae:cookie-consent-reset", checkCookie);
+      observer.disconnect();
+    };
+  }, []);
 
   if (!mounted || totalItems === 0) return null;
 
@@ -47,8 +67,11 @@ export function MobileMiniCart() {
       <div aria-hidden="true" className="md:hidden h-20" />
 
       <div
-        className="md:hidden fixed inset-x-0 bottom-0 z-40 border-t border-border bg-background/95 backdrop-blur-md shadow-[0_-8px_24px_-12px_rgba(0,0,0,0.15)]"
-        style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
+        className="md:hidden fixed inset-x-0 z-40 border-t border-border bg-background/95 backdrop-blur-md shadow-[0_-8px_24px_-12px_rgba(0,0,0,0.15)] transition-all duration-300"
+        style={{
+          bottom: cookieVisible ? "var(--cookie-banner-h, 56px)" : 0,
+          paddingBottom: "env(safe-area-inset-bottom)"
+        }}
         role="region"
         aria-label="Resumen del carrito"
       >

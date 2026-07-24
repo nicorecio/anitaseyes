@@ -25,6 +25,7 @@ export function CookieConsent() {
       localStorage.setItem(STORAGE_KEY, value);
     } catch {}
     setVisible(false);
+    document.documentElement.style.removeProperty("--cookie-banner-h");
   };
 
   if (!visible) return null;
@@ -35,6 +36,12 @@ export function CookieConsent() {
       aria-live="polite"
       aria-label="Aviso de cookies"
       className="fixed inset-x-0 bottom-0 z-50 pointer-events-none"
+      ref={(el) => {
+        if (el) {
+          const h = el.getBoundingClientRect().height;
+          document.documentElement.style.setProperty("--cookie-banner-h", `${h}px`);
+        }
+      }}
     >
       <div className="pointer-events-auto bg-background border-t border-border px-4 py-2 sm:py-3 shadow-[0_-4px_20px_rgba(0,0,0,0.05)]">
         <div className="max-w-5xl mx-auto flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
