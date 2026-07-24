@@ -57,8 +57,7 @@ export function Header({ hideLogo = false }: { hideLogo?: boolean }) {
         </Link>
         <nav className="hidden md:flex items-center gap-8 text-sm uppercase tracking-widest">
           <button onClick={() => go("New In")} className="hover:text-muted-foreground transition uppercase tracking-widest">New In</button>
-          <NavDropdown label="Ropa" items={ROPA_SUBCATS} parentCat="Todo" />
-          <NavDropdown label="Accesorios" items={ACCESORIOS_SUBCATS} parentCat="Accesorios" />
+          <button onClick={() => go("Todo")} className="hover:text-muted-foreground transition uppercase tracking-widest">Colección</button>
           <Link to="/sobre" className="hover:text-muted-foreground transition">Sobre Anita</Link>
         </nav>
         <div className="flex items-center gap-1 shrink-0">
