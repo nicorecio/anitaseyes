@@ -315,6 +315,35 @@ function Index() {
         </section>
       )}
 
+      {/* RESEÑAS */}
+      <section className="border-t border-border bg-background">
+        <div className="max-w-5xl mx-auto px-6 py-20 md:py-28">
+          <div className="text-center mb-12">
+            <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground mb-3">Lo que dicen nuestras clientas</p>
+            <h2 className="font-serif text-4xl md:text-5xl mb-4">4.7★ en Vinted</h2>
+            <p className="text-muted-foreground text-sm">169 valoraciones verificadas</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {[
+              { name: "Alicia", text: "Vendedora de 10, pedido súper rápido, en perfectas condiciones y empaquetado con detalle, gracias!!" },
+              { name: "Elorien", text: "Todo perfecto! La prenda estupenda y la vendedora súper amable. Recomiendo mucho!" },
+              { name: "Chris", text: "Super bien! Muy buena comunicación y envío rapidísimo." },
+              { name: "Carmen", text: "Todo perfecto. Vendedora top, recomendable. Y muchas gracias por el detalle de regalo." },
+              { name: "Mpr", text: "Perfecto! Artículo tal y como describía la vendedora. Súper contenta con mi compra." },
+              { name: "Saray", text: "Todo genial y súper buena atención!!!" },
+            ].map(({ name, text }) => (
+              <div key={name} className="border border-border p-6 flex flex-col gap-3">
+                <div className="flex items-center gap-1 text-accent">
+                  {"★★★★★".split("").map((s, i) => <span key={i}>{s}</span>)}
+                </div>
+                <p className="text-sm text-muted-foreground leading-relaxed">"{text}"</p>
+                <p className="text-xs uppercase tracking-widest font-medium">{name}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* FOOTER */}
       <footer className="border-t border-border">
         <div className="max-w-7xl mx-auto px-6 py-14 grid md:grid-cols-4 gap-8 text-sm">
