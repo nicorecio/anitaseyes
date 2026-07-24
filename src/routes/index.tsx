@@ -3,6 +3,7 @@ import { useEffect, useMemo, useState } from "react";
 import { Header } from "@/components/Header";
 import { AnimatedLogo } from "@/components/AnimatedLogo";
 import { ProductCard } from "@/components/ProductCard";
+import { VisaIcon, MastercardIcon, ApplePayIcon, BizumIcon } from "@/components/PaymentIcons";
 import heroAnita from "@/assets/hero-anita.jpg.asset.json";
 
 import { Button } from "@/components/ui/button";
