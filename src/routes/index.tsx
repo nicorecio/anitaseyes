@@ -397,11 +397,11 @@ function Index() {
               <Link to="/privacidad" className="hover:text-accent">Privacidad</Link>
               <Link to="/cookies" className="hover:text-accent">Cookies</Link>
               <span className="text-muted-foreground/40">·</span>
-              <span className="flex items-center gap-2 text-muted-foreground" aria-label="Métodos de pago aceptados">
-                <VisaIcon className="h-4 w-auto" />
-                <MastercardIcon className="h-4 w-auto" />
-                <ApplePayIcon className="h-4 w-auto" />
-                <BizumIcon className="h-4 w-auto" />
+              <span className="flex items-center gap-3 text-muted-foreground" aria-label="Métodos de pago aceptados">
+                <VisaIcon className="h-6 w-auto" />
+                <MastercardIcon className="h-6 w-auto" />
+                <ApplePayIcon className="h-6 w-auto" />
+                <BizumIcon className="h-6 w-auto" />
               </span>
             </div>
           </div>
