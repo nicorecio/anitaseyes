@@ -15,8 +15,8 @@ export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
     meta: [
-      { title: "Anitas Eyes — Ropa para mujer con mirada propia" },
-      { name: "description", content: "Tienda online de ropa de Anitas Eyes: tops, camisas, vestidos, faldas y pijamas. Envío en 2–4 días y pago seguro." },
+      { title: "Anita's Eyes — Ropa para mujer con mirada propia" },
+      { name: "description", content: "Tienda online de Anita's Eyes: tops, camisas, vestidos, faldas y pijamas. Envío en 2–4 días y pago seguro." },
     ],
   }),
 });
@@ -314,37 +314,11 @@ function Index() {
         </section>
       )}
 
-      {/* NEWSLETTER */}
-      <section className="bg-foreground text-background">
-        <div className="max-w-4xl mx-auto px-6 py-20 md:py-28 text-center">
-          <Mail className="mx-auto h-6 w-6 mb-6 opacity-70" />
-          <h2 className="font-serif text-4xl md:text-5xl mb-4">
-            Sé la primera en saberlo.
-          </h2>
-          <p className="opacity-70 max-w-md mx-auto mb-8">
-            Avisos de nuevas prendas, ediciones limitadas y descuentos. Sin ruido.
-          </p>
-          <form onSubmit={onSubscribe} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-            <Input
-              type="email"
-              required
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="tu@email.com"
-              className="bg-background/10 border-background/20 text-background placeholder:text-background/50 h-12"
-            />
-            <Button type="submit" size="lg" variant="secondary">
-              Suscribirme
-            </Button>
-          </form>
-        </div>
-      </section>
-
       {/* FOOTER */}
       <footer className="border-t border-border">
         <div className="max-w-7xl mx-auto px-6 py-14 grid md:grid-cols-4 gap-8 text-sm">
           <div>
-            <p className="font-serif text-2xl mb-3">anitas.eyes</p>
+            <p className="font-serif text-2xl mb-3">Anita's Eyes</p>
             <p className="text-muted-foreground max-w-sm">
             Ropa seleccionada por Anita. Joyas hechas por Anita. Todo con cariño.
             </p>
@@ -387,7 +361,7 @@ function Index() {
         </div>
         <div className="border-t border-border">
           <div className="max-w-7xl mx-auto px-6 py-6 text-xs text-muted-foreground flex flex-col md:flex-row justify-between gap-3">
-            <p>© {new Date().getFullYear()} Anitas Eyes. Hecho con cariño.</p>
+            <p>© {new Date().getFullYear()} Anita's Eyes. Hecho con cariño.</p>
             <div className="flex flex-wrap gap-4">
               <Link to="/aviso-legal" className="hover:text-accent">Aviso legal</Link>
               <Link to="/privacidad" className="hover:text-accent">Privacidad</Link>

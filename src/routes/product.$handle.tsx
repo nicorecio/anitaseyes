@@ -317,15 +317,7 @@ function ProductPage() {
                   "Agotado"
                 )}
               </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                className="h-12 w-12 p-0"
-                aria-label="Guardar"
-                onClick={() => toast("Guardado en favoritos")}
-              >
-                <Heart className="h-4 w-4" />
-              </Button>
+
             </div>
 
             {/* Secure payment badge */}

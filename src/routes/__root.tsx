@@ -33,14 +33,15 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Anitas Eyes — Joyería, ropa y accesorios para mujer" },
-      { name: "description", content: "Tienda online de Anitas Eyes: piezas curadas para mujeres con estilo. Pago seguro." },
-      { name: "author", content: "Anitas Eyes" },
-      { property: "og:title", content: "Anitas Eyes" },
-      { property: "og:description", content: "Joyería, ropa y accesorios curados para mujeres." },
+      { title: "Anita's Eyes — Ropa para mujer con mirada propia" },
+      { name: "description", content: "Tienda online de Anita's Eyes: ropa cómoda, bonita y asequible para mujeres. Tops, vestidos, faldas y más. Envío en 2–4 días." },
+      { name: "author", content: "Anita's Eyes" },
+      { property: "og:title", content: "Anita's Eyes — Ropa para mujer" },
+      { property: "og:description", content: "Ropa seleccionada por Anita: cómoda, bonita y para todos los días. Envíos a toda España." },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
+      { property: "og:image", content: "https://anitaseyes.com/og-image.jpg" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:site", content: "@anitas.eyes" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
@@ -59,7 +60,7 @@ export const Route = createRootRoute({
 
 function RootShell({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="es">
       <head>
         <HeadContent />
       </head>
