@@ -142,6 +142,7 @@ function SobrePage() {
           </p>
           <Link
             to="/"
+            hash="tienda"
             className="inline-flex items-center text-sm uppercase tracking-widest border-b border-foreground pb-1 hover:text-muted-foreground hover:border-muted-foreground transition self-start sm:self-auto"
           >
             Ver la colección →
