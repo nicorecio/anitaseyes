@@ -317,7 +317,24 @@ function ProductPage() {
                   "Agotado"
                 )}
               </Button>
+            </div>
 
+            {/* CTA sticky mobile */}
+            <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-background border-t border-border px-4 py-3">
+              <Button
+                onClick={handleAdd}
+                disabled={isLoading || !variant?.availableForSale}
+                size="lg"
+                className="w-full h-12"
+              >
+                {isLoading ? (
+                  <Loader2 className="h-4 w-4 animate-spin" />
+                ) : variant?.availableForSale ? (
+                  "Añadir al bolso"
+                ) : (
+                  "Agotado"
+                )}
+              </Button>
             </div>
 
             {/* Secure payment badge */}
