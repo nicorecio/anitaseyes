@@ -170,7 +170,7 @@ function Index() {
       <AnimatedLogo />
 
       {/* HERO */}
-      <section className="relative overflow-hidden border-b border-border">
+      <section className="relative overflow-hidden">
         <div aria-hidden className="h-32 md:h-80" />
         <div className="max-w-7xl mx-auto px-6 pb-12 md:pb-20 grid md:grid-cols-2 gap-12 items-center">
           <div>
@@ -203,7 +203,7 @@ function Index() {
       </section>
 
       {/* SERVICIOS */}
-      <section className="border-b border-border bg-background">
+      <section className="bg-background">
         <div className="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10">
           {[
             { Icon: Sparkles, title: "Seleccionado con mimo", text: "Tejidos cuidados y prendas pensadas para sentirte bien." },
@@ -226,7 +226,7 @@ function Index() {
 
 
       {/* TESTIMONIO */}
-      <section className="bg-secondary border-y border-border">
+      <section className="bg-secondary">
         <div className="max-w-4xl mx-auto px-6 py-20 md:py-28 text-center">
           <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground mb-8">EL CONCEPTO DE ANITA'S EYES:</p>
           <blockquote className="font-serif text-3xl md:text-5xl leading-tight italic">
@@ -240,7 +240,7 @@ function Index() {
       </section>
 
       {/* TIENDA */}
-      <section id="tienda" className="max-w-7xl mx-auto px-6 py-20 border-t border-border">
+      <section id="tienda" className="max-w-7xl mx-auto px-6 py-20">
         <div className="flex items-end justify-between mb-8">
           <div>
             <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground mb-2">Tienda</p>
@@ -293,7 +293,7 @@ function Index() {
       </section>
 
       {/* RESEÑAS */}
-      <section className="border-t border-border bg-background">
+      <section className="bg-background">
         <div className="max-w-5xl mx-auto px-6 py-20 md:py-28">
           <div className="text-center mb-12">
             <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground mb-3">Lo que dicen nuestras clientas</p>
