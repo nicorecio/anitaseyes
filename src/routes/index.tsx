@@ -362,11 +362,17 @@ function Index() {
         <div className="border-t border-border">
           <div className="max-w-7xl mx-auto px-6 py-6 text-xs text-muted-foreground flex flex-col md:flex-row justify-between gap-3">
             <p>© {new Date().getFullYear()} Anita's Eyes. Hecho con cariño.</p>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap items-center gap-4">
               <Link to="/aviso-legal" className="hover:text-accent">Aviso legal</Link>
               <Link to="/privacidad" className="hover:text-accent">Privacidad</Link>
               <Link to="/cookies" className="hover:text-accent">Cookies</Link>
-              <span>Envíos a toda España · Pago seguro</span>
+              <span className="text-muted-foreground/40">·</span>
+              <span className="flex items-center gap-2">
+                <span className="border border-border rounded px-2 py-0.5 font-medium text-foreground">VISA</span>
+                <span className="border border-border rounded px-2 py-0.5 font-medium text-foreground">MC</span>
+                <span className="border border-border rounded px-2 py-0.5 font-medium text-foreground">Bizum</span>
+                <span className="border border-border rounded px-2 py-0.5 font-medium text-foreground"> Pay</span>
+              </span>
             </div>
           </div>
         </div>
