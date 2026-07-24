@@ -292,29 +292,6 @@ function Index() {
         )}
       </section>
 
-      {/* ACCESORIOS — sección secundaria */}
-      {accessoryProducts.length > 0 && (
-        <section className="bg-secondary border-t border-border">
-          <div className="max-w-7xl mx-auto px-6 py-20">
-            <div className="flex items-end justify-between mb-10">
-              <div>
-                <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground mb-2">Para completar el look</p>
-                <h2 className="font-serif text-3xl md:text-4xl">Accesorios</h2>
-              </div>
-              <button
-                onClick={() => goToCategory(ACCESSORIES_TAB)}
-                className="hidden md:inline-flex items-center text-sm uppercase tracking-widest hover:text-accent"
-              >
-                Ver todos <ArrowRight className="ml-2 h-4 w-4" />
-              </button>
-            </div>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-12">
-              {accessoryProducts.slice(0, 4).map((p) => <ProductCard key={p.node.id} product={p} />)}
-            </div>
-          </div>
-        </section>
-      )}
-
       {/* RESEÑAS */}
       <section className="border-t border-border bg-background">
         <div className="max-w-5xl mx-auto px-6 py-20 md:py-28">
