@@ -133,8 +133,8 @@ function Index() {
     if (activeTab === ALL_TAB) return products;
     if (activeTab === "Ropa") return clothingProducts.length ? clothingProducts : products;
     if (activeTab === NEW_IN_TAB) {
-      const news = products.filter(isNewIn);
-      return news.length ? news : products.slice(0, 8);
+      const news = products.filter(isNewIn).filter((p) => p.node.availableForSale);
+      return news.length ? news : products.filter((p) => p.node.availableForSale).slice(0, 8);
     }
     if (activeTab === ACCESSORIES_TAB) return accessoryProducts;
     const accSub = ACCESSORY_SUBCATS.find((c) => c.name === activeTab);
